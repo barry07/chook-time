@@ -19,6 +19,18 @@ test.describe('Landing Page UI', () => {
     await expect(page.getByText('Unit')).toBeVisible();
   });
 
+  test('Facebook sharing option displays', async ({ page }) => {
+    await expect(page.locator('a[href*="facebook.com/sharer"]')).toBeVisible();
+  });
+
+  test('WhatsApp sharing option displays', async ({ page }) => {
+    await expect(page.locator('a[href*="api.whatsapp.com/send"]')).toBeVisible();
+  });
+
+  test('Instagram sharing option displays', async ({ page }) => {
+    await expect(page.locator('a[href*="www.instagram.com/"]')).toBeVisible();
+  });
+
 });
 
 
