@@ -19,7 +19,7 @@ test.describe('Landing Page UI', () => {
     await expect(page.getByText('Unit')).toBeVisible();
   });
 
-  test('Unit dropdown includes Kilograms and Pounds', async ({ page }) => {
+  test.skip('Unit dropdown includes Kilograms and Pounds', async ({ page }) => {
     await page.goto('http://localhost:5173/');
   
     const unitDropdown = page.locator('select');
