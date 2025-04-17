@@ -19,6 +19,15 @@ test.describe('Landing Page UI', () => {
     await expect(page.getByText('Unit')).toBeVisible();
   });
 
+  test('Unit dropdown includes Kilograms and Pounds', async ({ page }) => {
+    await page.goto('http://localhost:5173/');
+  
+    const unitDropdown = page.locator('select');
+  
+    await expect(unitDropdown).toContainText('Kilograms');
+    await expect(unitDropdown).toContainText('Pounds');
+  });
+
   test('Facebook sharing option displays', async ({ page }) => {
     await expect(page.locator('a[href*="facebook.com/sharer"]')).toBeVisible();
   });
